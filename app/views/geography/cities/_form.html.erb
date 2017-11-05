@@ -1,0 +1,52 @@
+<%= form_for(city) do |f| %>
+  <% if city.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(city.errors.count, "error") %> prohibited this city from being saved:</h2>
+
+      <ul>
+      <% city.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cdg_ibge %>
+    <%= f.number_field :cdg_ibge %>
+  </div>
+
+  <div class="field">
+    <%= f.label :state_id %>
+    <%= f.number_field :state_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :population_2010 %>
+    <%= f.number_field :population_2010 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :demographic_density %>
+    <%= f.text_field :demographic_density %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gentile %>
+    <%= f.text_field :gentile %>
+  </div>
+
+  <div class="field">
+    <%= f.label :area %>
+    <%= f.text_field :area %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

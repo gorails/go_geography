@@ -1,0 +1,9 @@
+
+<%= provide :page_title, I18n.t('cities.edit.header', resource: @city.try(:id) ) %>
+
+<%= render 'form', city: @city %>
+
+<br>
+<%= link_to I18n.t('views.misc.actions.show'), @city ,class: 'btn btn-sm btn-square btn-default'%> |
+<%= link_to I18n.t('views.misc.actions.back'), cities_path, class: 'btn btn-sm btn-square btn-default' %>
+

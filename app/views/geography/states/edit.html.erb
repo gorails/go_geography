@@ -1,0 +1,9 @@
+<h1><%=  I18n.t('activerecord.models.state.one') %></h1>
+
+
+<%= render 'form', state: @state %>
+
+<br>
+<%= link_to I18n.t('views.misc.actions.show'), @state ,class: 'btn btn-sm btn-square btn-default'%> |
+<%= link_to I18n.t('views.misc.actions.back'), geography_states_path, class: 'btn btn-sm btn-square btn-default' %>
+
