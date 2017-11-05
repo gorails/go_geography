@@ -1,0 +1,24 @@
+<% collection.each do |resource| %>
+  <tr>
+    <td><%= resource.name %></td>
+    <td><%= resource.cdg_ibge %></td>
+    <td><%= resource.state_id %></td>
+    <td><%= resource.population_2010 %></td>
+    <td><%= resource.demographic_density %></td>
+    <td><%= resource.gentle %></td>
+    <td><%= resource.area %></td>
+
+    <td class="text-center">
+        <%= link_to resource, data: {toggle: 'tooltip', original_title: I18n.t('views.misc.actions.show')}, title: '', class: "btn btn-xs btn-default" do %>
+          <i class="fa fa-list"></i>
+        <% end %>
+        <%= link_to edit_city_path(resource), data: {toggle: 'tooltip', original_title: I18n.t('views.misc.actions.edit')}, title: '', class: "btn btn-xs btn-default" do %>
+          <i class="fa fa-pencil"></i>
+        <% end %>
+
+        <%= link_to resource, method: :delete, data: { confirm: I18n.t('views.misc.actions.confirm') }, title: '', class: "btn btn-xs btn-default" do %>
+          <i class="fa fa-times"></i>
+        <% end %>
+    </td>
+  </tr>
+<% end %>

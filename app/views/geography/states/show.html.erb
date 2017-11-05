@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= I18n.t 'activerecord.attributes.state.name' %>:</strong>
+  <%= @state.name %>
+</p>
+
+<p>
+  <strong><%= I18n.t 'activerecord.attributes.state.initials' %>:</strong>
+  <%= @state.initials %>
+</p>
+
+
+
+
+
+<%= link_to I18n.t('views.misc.actions.back'), states_path, class: 'btn btn-sm btn-square btn-default' %>
+<%= link_to I18n.t('views.misc.actions.edit'),edit_state_path(@state), class: 'btn btn-sm btn-square btn-default' %>
+<%= link_to I18n.t('views.misc.actions.destroy'),states_path(@state), method: :destroy, data: {confirm: I18n.t('views.misc.actions.confirm') }, class: 'btn btn-sm btn-square btn-default' %>
+
+

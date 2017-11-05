@@ -1,0 +1,31 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      city:
+        one: "Cidade"
+        other: "Cidades"
+        explain: "Cidade"
+      state:
+        one: "Estado"
+        other: "Estados"
+        explain: "Estado"
+
+    attributes:
+      city:
+        name: "Nome"
+        cdg_ibge: "Código Ibge"
+        state: "Estado"
+        population_2010: "População em 2010"
+        demographic_density: "Densidade demográfica"
+        gentle: "Gentilico"
+        area: "Área"
+        id: ID
+        created_at: Criado em
+        updated_at: Atualizado em
+      state:
+        name: "Nome"
+        initials: "Inicial"
+        id: ID
+        created_at: Criado em
+        updated_at: Atualizado em

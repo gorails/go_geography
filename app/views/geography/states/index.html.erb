@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%=  I18n.t('activerecord.models.state.other') %></h1>
+
+
+<table>
+  <thead>
+    <tr>
+      <th><%= I18n.t 'activerecord.attributes.state.name' %></th>
+      <th><%= I18n.t 'activerecord.attributes.state.initials' %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <%= render 'collection', collection: @states %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New State', new_state_path %>
