@@ -2,17 +2,17 @@ module Geography
   class CitiesController < ApplicationController
     before_action :set_city, only: [:show, :edit, :update, :destroy]
     before_action :authenticate_user!
-    add_breadcrumb 'Cidades', :cities_path
-    add_breadcrumb 'Criar nova cidade', '', :only => [:new, :create]
-    add_breadcrumb 'Editar nova cidade', '', :only => [:edit, :update]
+    #add_breadcrumb 'Cidades', :cities_path
+    #add_breadcrumb 'Criar nova cidade', '', :only => [:new, :create]
+    #add_breadcrumb 'Editar nova cidade', '', :only => [:edit, :update]
     # GET /cities
     def index
-      @cities = City.all.page(params[:page])
+      @cities = City.all.order(:name).page(params[:page])
     end
 
     # GET /cities/1
     def show
-      add_breadcrumb @city.name, ''
+     # add_breadcrumb @city.name, ''
     end
 
     # GET /cities/new

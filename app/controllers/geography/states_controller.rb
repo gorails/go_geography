@@ -5,7 +5,7 @@ module Geography
 
     # GET /states
     def index
-      @states = State.all
+      @states = State.all.order(:name)
     end
 
     # GET /states/1
