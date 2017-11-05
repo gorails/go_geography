@@ -2,6 +2,7 @@ module Geography
   class CitiesController < ApplicationController
     before_action :set_city, only: [:show, :edit, :update, :destroy]
     before_action :authenticate_user!
+    load_and_authorize_resource except: [:create]
     #add_breadcrumb 'Cidades', :cities_path
     #add_breadcrumb 'Criar nova cidade', '', :only => [:new, :create]
     #add_breadcrumb 'Editar nova cidade', '', :only => [:edit, :update]
@@ -26,8 +27,8 @@ module Geography
 
     # POST /cities
     def create
+      authorize! :create, @city
       @city = City.new(city_params)
-
       if @city.save
         redirect_to @city, notice: 'City was successfully created.'
       else
@@ -58,7 +59,7 @@ module Geography
 
     # Only allow a trusted parameter "white list" through.
     def city_params
-      params.require(:city).permit(:name, :cdg_ibge, :state_id, :population_2010, :demographic_density, :gentle, :area)
+      params.require(:geography_city).permit(:name, :cdg_ibge, :state_id, :population_2010, :demographic_density, :gentle, :area)
     end
   end
 end

@@ -2,6 +2,7 @@ module Geography
   class StatesController < ApplicationController
     before_action :set_state, only: [:show, :edit, :update, :destroy]
     before_action :authenticate_user!
+    load_and_authorize_resource except: [:create]
 
     # GET /states
     def index
@@ -23,6 +24,7 @@ module Geography
 
     # POST /states
     def create
+      authorize! :create, @state
       @state = State.new(state_params)
 
       if @state.save
@@ -55,7 +57,7 @@ module Geography
 
     # Only allow a trusted parameter "white list" through.
     def state_params
-      params.require(:state).permit(:name, :initials)
+      params.require(:geography_state).permit(:name, :initials)
     end
   end
 end
